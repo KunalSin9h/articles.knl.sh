@@ -1,0 +1,5 @@
+Black = #171717
+white = #E8E8E8
+
+B = #181815
+W = #EEEED0
