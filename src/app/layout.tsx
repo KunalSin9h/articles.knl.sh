@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { cantoRoman } from "../lib/fontsCanto";
 
 export default function RootLayout({
   children,
@@ -6,9 +7,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html className="text-4xl">
+    <html>
       <head />
-      <body className="flex h-screen items-center justify-center bg-[#EEEED0]">
+      <body
+        className={`${cantoRoman.className} bg-whiteBg text-xl text-blackText dark:bg-blackBg dark:text-whiteText md:text-2xl`}
+      >
         {children}
       </body>
     </html>
