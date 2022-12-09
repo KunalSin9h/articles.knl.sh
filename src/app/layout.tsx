@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 import { cantoRoman } from "../lib/fontsCanto";
+import DarkButton from "../components/DarkButton";
+
 
 export default function RootLayout({
   children,
@@ -10,9 +12,14 @@ export default function RootLayout({
     <html>
       <head />
       <body
-        className={`${cantoRoman.className} bg-whiteBg text-xl text-blackText dark:bg-blackBg dark:text-whiteText md:text-2xl`}
+        className={`${cantoRoman.className} bg-whiteBg  text-xl text-blackText selection:bg-cream dark:bg-blackBg dark:text-whiteText dark:selection:bg-dullPurple md:text-2xl`}
       >
-        {children}
+        <div className="mx-auto max-w-3xl">
+          <div className="absolute top-0 right-0">
+            <DarkButton />
+          </div>
+          {children}
+        </div>
       </body>
     </html>
   );
