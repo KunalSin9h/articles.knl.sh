@@ -16,6 +16,6 @@ module.exports = {
       dullPurple: "#996070",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
   darkMode: "class",
 };

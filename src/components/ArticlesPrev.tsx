@@ -1,6 +1,6 @@
 import { getAllArticles } from "../lib/getArticles";
 import { cantoSemiBold } from "../lib/fontsCanto";
-import ArticleCart from "./ArticleCart";
+import ArticleCart from "./ArticleCard";
 import type { Article } from "../lib/getArticles";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default function ArticlePrev(): JSX.Element | null {
   return (
     <>
       <p className={`${cantoSemiBold.className} m-2 p-2 text-3xl`}>Articles</p>
-      <div className="mx-10">
+      <div className="mx-8 md:mx-10">
         {articles.map((art: Article, i: number) => {
           if (i >= 5) return null;
           return (
@@ -27,7 +27,7 @@ export default function ArticlePrev(): JSX.Element | null {
         <div className="m-4 text-right">
           {articles.length > 5 ? (
             <Link href="/articles">
-              <button className="hover:underline underline-offset-8">
+              <button className="underline-offset-8 hover:underline">
                 See all articles &rarr;
               </button>
             </Link>
