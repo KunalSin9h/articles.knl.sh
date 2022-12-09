@@ -47,8 +47,10 @@ export function getAllArticles(): Article[] {
     return getArticleBySlug(slug);
   });
   return articles.sort(({ date: a }, { date: b }) => {
-    if (a < b) return 1;
-    if (a > b) return -1;
+    const dateA: Date = new Date(a);
+    const dateB: Date = new Date(b);
+    if (dateA < dateB) return 1;
+    else if (dateA > dateB) return -1;
     return 0;
   });
 }
