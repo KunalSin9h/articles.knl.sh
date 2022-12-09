@@ -14,7 +14,9 @@ export default function ArticlePage() {
       </p>
       <div className="ml-8 md:ml-10">
         <Link href="/">
-          <button className="hover:underline">&larr; Back to home</button>
+          <button className="mb-2 underline-offset-8 hover:underline">
+            &larr; Back to home
+          </button>
         </Link>
       </div>
       <div className="mx-8 md:mx-10">
