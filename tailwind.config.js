@@ -13,9 +13,9 @@ module.exports = {
       blackText: "#181815",
       whiteText: "#E8E8E8",
       cream: "#B9BA87",
-      dullPurple: "#996070"
+      dullPurple: "#996070",
     },
   },
   plugins: [],
-  // darkMode: "class",
+  darkMode: "class",
 };
