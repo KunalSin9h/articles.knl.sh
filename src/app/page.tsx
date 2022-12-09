@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { cantoBold } from "../lib/fontsCanto";
 import Socials from "../components/Socials";
 
