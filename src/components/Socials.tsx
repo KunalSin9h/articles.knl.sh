@@ -16,7 +16,7 @@ export default function Socials({
           alt={`${name} Logo`}
           width={30}
           height={30}
-          className="md:opacity-75 md:hover:opacity-100 dark:invert"
+          className="select-none dark:invert md:opacity-75 md:hover:opacity-100"
         />
       </Link>
     </li>
