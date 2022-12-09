@@ -1,7 +1,7 @@
 ---
 title: "Changing World Order Is not something that we can ignore"
 description: "The world is changing, and we need to change with it."
-date: "2022-11-9"
+date: "2022/11/9"
 authors: ["Aniket Singh", "Kunal Singh"]
 ---
 
