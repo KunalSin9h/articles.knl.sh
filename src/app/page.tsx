@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cantoBold, cantoSemiBold } from "../lib/fontsCanto";
+import { cantoBold } from "../lib/fontsCanto";
 import Socials from "../components/Socials";
 
 export default function Home(): JSX.Element {
@@ -11,7 +11,7 @@ export default function Home(): JSX.Element {
           alt="Picture of the Author(Aniket Singh)"
           width={200}
           height={200}
-          className="mt-8 mb-4 h-36 w-36 md:h-48 md:w-48"
+          className="mt-8 mb-4 h-36 w-36 select-none md:h-48 md:w-48"
         />
         <p className={`${cantoBold.className} text-5xl md:text-6xl`}>
           Aniket Singh
@@ -22,16 +22,17 @@ export default function Home(): JSX.Element {
           consectetur nesciunt dicta, ipsa deserunt, ea maxime minus doloremque
           dolore, provident ullam impedit.
         </p>
-        <ul className="m-2 flex gap-4 ">
+        <ul className="m-2 flex select-none gap-4 ">
           <Socials name="twitter" link="https://twitter.com/aniketsinghco" />
           <Socials
             name="linkedin"
             link="https://www.linkedin.com/in/aniketsinghco/"
           />
-          <Socials name="mail" link="mailto:aniketsingh.co.in" />
+          <Socials name="mail" link="mailto:contact@aniketsingh.co.in" />
           <Socials name="resume" link="https://aniketsingh.co.in/resume" />
         </ul>
       </div>
+      <section></section>
     </div>
   );
 }

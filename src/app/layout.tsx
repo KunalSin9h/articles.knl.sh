@@ -10,7 +10,7 @@ export default function RootLayout({
     <html>
       <head />
       <body
-        className={`${cantoRoman.className} bg-whiteBg text-xl text-blackText dark:bg-blackBg dark:text-whiteText md:text-2xl`}
+        className={`${cantoRoman.className} bg-whiteBg text-xl text-blackText selection:bg-cream dark:bg-blackBg dark:text-whiteText dark:selection:bg-dullPurple md:text-2xl`}
       >
         {children}
       </body>
