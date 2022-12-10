@@ -24,6 +24,7 @@ content starts at 4-columns in.
 >
 > They can span multiple paragraphs,
 > if you like.
+> 
 
 Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
 in chapters 12--14"). Three dots ... will be converted to an ellipsis.
@@ -153,7 +154,7 @@ Here's a "line block":
 
 and images can be specified like so:
 
-![example image](example-image.jpg "An exemplary image")
+![example image](https://camo.githubusercontent.com/9d885a163a311ece356a9a0d171fafd27a73b5a297f8eebec0d9b206382b7731/68747470733a2f2f646f696e67746f2e6c6976652f696d616765732f64656d6f312e706e67)
 
 Inline math equations go in like so: $\omega = d\phi / dt$. Display
 math should get its own line and be put in in double-dollarsigns:
