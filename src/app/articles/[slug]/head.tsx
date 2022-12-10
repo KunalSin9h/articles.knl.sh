@@ -26,10 +26,7 @@ export default function ArticlePostHead({
       />
       <meta property="og:site_name" content="aniketsingh.co.in" />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:description"
-        content={art.description}
-      />
+      <meta property="og:description" content={art.description} />
     </>
   );
 }
