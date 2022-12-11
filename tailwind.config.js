@@ -49,8 +49,8 @@ module.exports = {
             blockquote: {
               marginTop: '1.2rem',
               marginBottom: '1.2rem',
-              lineHeight: "1rem",
-              paddingLeft: '0.7rem'
+              lineHeight: "1.2rem",
+              paddingLeft: '0.8rem'
             },
             ol: {
               marginTop: '0.5rem',
@@ -102,6 +102,8 @@ module.exports = {
               marginBottom: '1rem',
               marginLeft: "auto",
               marginRight: "auto",
+              borderRadius: '10px',
+              maxWidth: '90%',
             },
             video: {
               marginTop: '1rem',

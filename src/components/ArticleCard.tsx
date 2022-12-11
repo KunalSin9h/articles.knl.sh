@@ -14,6 +14,12 @@ export default function ArticleCard({
   desc?: string;
   authors: string[];
 }) {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const postDate = new Date(date);
+    const year = postDate.getFullYear();
+    const month = months[postDate.getMonth()];
+    const dat = postDate.getDate();
+
   return (
     <div className="mt-10 flex flex-col items-start border-b-2 border-b-blackText  first:mt-0 dark:border-b-whiteText">
       <Link href={`/articles/${slug}`}>
@@ -27,7 +33,7 @@ export default function ArticleCard({
         </p>
       ) : null}
       <div className="flex justify-start gap-2 text-sm">
-        <p className="font-bold">{`${date},`}</p>
+        <p className="font-bold">{`${month} ${dat}, ${year} .`}</p>
         {authors.map((a) => {
           return <p key={a}>{a}</p>;
         })}
