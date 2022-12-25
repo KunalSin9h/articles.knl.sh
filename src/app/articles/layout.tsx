@@ -12,14 +12,8 @@ export default function ArticleLayout({
       <div
         className={`${cantoLight.className} mt-16 border-t-2 border-t-blackText border-opacity-50 p-2 text-center  text-sm  dark:border-t-whiteText`}
       >
-        &copy; {new Date().getFullYear()}{" "}
-        <Link
-          href="https://creativecommons.org/licenses/by-nc-sa/2.0/"
-          target="_blank"
-        >
-          <span className="underline">CC BY-NC-SA 2.0</span>
-        </Link>{" "}
-        , Aniket Kumar Singh.
+        &copy; {new Date().getFullYear()}{" "} Aniket Kumar Singh. Content Licensed Under CC-BY-NC-4.0
+
       </div>
     </div>
   );
