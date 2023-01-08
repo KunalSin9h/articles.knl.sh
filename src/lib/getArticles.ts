@@ -1,61 +1,32 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { remark } from "remark";
-import remarkGfm from "remark-gfm";
-import html from "remark-html";
-
 export type Article = {
-  title: string;
-  date: string;
-  description?: string;
-  slug: string;
-  authors: string[];
-  content: string;
+  Title: string;
+  Slug: string;
+  Description?: string;
+  Date: string;
+  Md: string;
 };
 
-const postDir = path.join(process.cwd(), "posts");
+export async function getArticleBySlug(slug: string) {
+  const res = await fetch("https://asback.kunalsin9h.dev/get-articles/");
+  const data: Article[] = await res.json();
 
-export function getAllSlug(): (string | null)[] {
-  const allFiles: (string | null)[] = fs.readdirSync(postDir);
-  return allFiles.map((file) => {
-    return file.replace(/\.md$/, "");
-  });
+  const article: Article = data.find((art: Article) => {
+    if (art.Slug === slug) {
+      return art;
+    }
+  })
+  return article;
 }
 
-export function getArticleBySlug(slug: string): Article {
-  const file = fs.readFileSync(path.join(postDir, `${slug}.md`), "utf-8"),
-    fileMatter = matter(file),
-    title = fileMatter.data.title,
-    date = fileMatter.data.date,
-    description = fileMatter.data.description,
-    authors = fileMatter.data.authors,
-    content = fileMatter.content;
-  return {
-    title,
-    date,
-    description,
-    slug,
-    authors,
-    content,
-  };
-}
+export async function getAllArticles() {
+  const res = await fetch("https://asback.kunalsin9h.dev/get-articles/");
+  const data: Article[] = await res.json();
 
-export function getAllArticles(): Article[] {
-  const slugs = getAllSlug();
-  const articles = slugs.map((slug) => {
-    return getArticleBySlug(slug);
-  });
-  return articles.sort(({ date: a }, { date: b }) => {
-    const dateA: Date = new Date(a);
-    const dateB: Date = new Date(b);
+  return data.sort((a: Article, b: Article) => {
+    const dateA: Date = new Date(a.Date);
+    const dateB: Date = new Date(a.Date);
     if (dateA < dateB) return 1;
     else if (dateA > dateB) return -1;
-    return 0;
-  });
-}
-
-export async function getContent(content: string): Promise<string> {
-  const val = await remark().use(html).use(remarkGfm).process(content);
-  return val.toString();
+    else return 0;
+  })
 }
