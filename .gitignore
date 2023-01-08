@@ -6,6 +6,10 @@
 # testing
 /coverage
 
+# DB
+.db
+db
+
 # next.js
 /.next/
 /out/
