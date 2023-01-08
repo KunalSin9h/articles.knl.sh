@@ -6,13 +6,11 @@ export default function ArticleCard({
   date,
   slug,
   desc,
-  authors,
 }: {
   title: string;
   date: string;
   slug: string;
   desc?: string;
-  authors: string[];
 }) {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const postDate = new Date(date);
@@ -33,10 +31,7 @@ export default function ArticleCard({
         </p>
       ) : null}
       <div className="flex justify-start gap-2 text-sm">
-        <p className="font-bold">{`${month} ${dat}, ${year} .`}</p>
-        {authors.map((a) => {
-          return <p key={a}>{a}</p>;
-        })}
+        <p className="font-bold">{`${month} ${dat}, ${year}`}</p>
       </div>
     </div>
   );

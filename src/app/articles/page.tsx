@@ -1,11 +1,14 @@
+"use client"
+
 import { getAllArticles } from "../../lib/getArticles";
 import { cantoBold } from "../../lib/fontsCanto";
 import type { Article } from "../../lib/getArticles";
 import ArticleCart from "../../components/ArticleCard";
 import Link from "next/link";
+import {use} from "react"
 
 export default function ArticlePage() {
-  const articles = getAllArticles();
+  const articles: Article[] = use(getAllArticles());
   if (articles.length === 0) return null;
   return (
     <>
@@ -24,11 +27,10 @@ export default function ArticlePage() {
           return (
             <ArticleCart
               key={i}
-              title={art.title}
-              slug={art.slug}
-              date={art.date}
-              desc={art.description}
-              authors={art.authors}
+              title={art.Title}
+              slug={art.Slug}
+              date={art.Date}
+              desc={art.Description}
             />
           );
         })}

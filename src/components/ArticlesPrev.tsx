@@ -1,11 +1,14 @@
+"use client"
+
 import { getAllArticles } from "../lib/getArticles";
 import { cantoSemiBold } from "../lib/fontsCanto";
 import ArticleCart from "./ArticleCard";
 import type { Article } from "../lib/getArticles";
 import Link from "next/link";
+import { use } from "react";
 
-export default function ArticlePrev(): JSX.Element | null {
-  const articles = getAllArticles();
+export default function ArticlePrev(){
+  const articles: Article[] = use(getAllArticles());
   if (articles.length === 0) return null;
   return (
     <>
@@ -16,11 +19,10 @@ export default function ArticlePrev(): JSX.Element | null {
           return (
             <ArticleCart
               key={i}
-              title={art.title}
-              slug={art.slug}
-              date={art.date}
-              desc={art.description}
-              authors={art.authors}
+              title={art.Title}
+              slug={art.Slug}
+              date={art.Date}
+              desc={art.Description}
             />
           );
         })}
