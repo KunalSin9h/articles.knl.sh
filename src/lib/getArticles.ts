@@ -7,7 +7,7 @@ export type Article = {
 };
 
 export async function getArticleBySlug(slug: string) {
-  const res = await fetch("https://asback.kunalsin9h.dev/get-articles/", { next: {revalidate:   60} });
+  const res = await fetch("https://asback.kunalsin9h.dev/get-articles/", { next: {revalidate:   300} });
   const data: Article[] = await res.json();
 
   const article: Article = data.find((art: Article) => {
@@ -19,7 +19,7 @@ export async function getArticleBySlug(slug: string) {
 }
 
 export async function getAllArticles() {
-  const res = await fetch("https://asback.kunalsin9h.dev/get-articles/", { next: {revalidate: 60} });
+  const res = await fetch("https://asback.kunalsin9h.dev/get-articles/", { next: {revalidate: 300} });
   let data: Article[] = await res.json();
   return  data.sort((a: Article, b: Article) => {
     const dateA: Date = new Date(a.Date);
