@@ -1,17 +1,11 @@
 "use client"
-import { Article, getAllArticles, getArticleBySlug } from "../../../lib/getArticles";
+
+import { Article, getArticleBySlug } from "../../../lib/getArticles";
 import ArticleCard from "../../../components/ArticleCard";
 import Link from "next/link";
 import { remark } from "remark";
 import html from "remark-html"
 import { use } from "react";
-
-export  function generateStaticParams() {
-  const allSlugs: Article[] = use(getAllArticles());
-  return allSlugs.map((art: Article) => ({
-    slug : art.Slug
-  }));
-}
 
 export default function ArticlePage({ params }) {
   const article: Article = use(getArticleBySlug(params.slug));
