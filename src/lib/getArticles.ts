@@ -20,11 +20,10 @@ export async function getArticleBySlug(slug: string) {
 
 export async function getAllArticles() {
   const res = await fetch("https://asback.kunalsin9h.dev/get-articles/", { cache: 'no-store' });
-  const data: Article[] = await res.json();
-
-  return data.sort((a: Article, b: Article) => {
+  let data: Article[] = await res.json();
+  return  data.sort((a: Article, b: Article) => {
     const dateA: Date = new Date(a.Date);
-    const dateB: Date = new Date(a.Date);
+    const dateB: Date = new Date(b.Date);
     if (dateA < dateB) return 1;
     else if (dateA > dateB) return -1;
     else return 0;
