@@ -11,8 +11,8 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            fontSize: '1.2rem',
-            lineHeight: "1.5rem",
+            fontSize: '1.4rem',
+            lineHeight: "1.6rem",
             a: {
               textDecoration: "none",
               color: "#996070",
