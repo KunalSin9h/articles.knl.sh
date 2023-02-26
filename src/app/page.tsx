@@ -10,28 +10,25 @@ export default function Home(): JSX.Element {
       <div className="flex flex-col items-center justify-center">
         <Image
           src="/images/dp.png"
-          alt="Picture of the Author(Aniket Singh)"
+          alt="Picture of the Kunal(Kunal Singh)"
           width={200}
           height={200}
-          className="mt-8 mb-4 h-36 w-36 select-none md:h-48 md:w-48"
+          className="mt-8 mb-4 h-36 w-36 select-none md:h-48 md:w-48 "
         />
         <p className={`${cantoBold.className} text-5xl md:text-6xl`}>
-          Aniket Singh
+          Kunal Singh
         </p>
         <p className="m-2 rounded-sm p-2 leading-5 md:leading-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum saepe
-          minima, necessitatibus consectetur fugit corporis aut! Reiciendis
-          consectetur nesciunt dicta, ipsa deserunt, ea maxime minus doloremque
-          dolore, provident ullam impedit.
+          These are my articles.
         </p>
         <ul className="m-2 flex select-none gap-4 ">
-          <Socials name="twitter" link="https://twitter.com/aniketsinghco" />
+          <Socials name="twitter" link="https://twitter.com/kunalsin9h" />
           <Socials
             name="linkedin"
-            link="https://www.linkedin.com/in/aniketsinghco/"
+            link="https://www.linkedin.com/in/kunalsin9h/"
           />
-          <Socials name="mail" link="mailto:contact@aniketsingh.co.in" />
-          <Socials name="resume" link="https://aniketsingh.co.in/resume" />
+          <Socials name="mail" link="mailto:contact@kunalsin9h.dev" />
+          <Socials name="resume" link="https://kunalsin9h.dev/resume.pdf" />
         </ul>
       </div>
       <section>
