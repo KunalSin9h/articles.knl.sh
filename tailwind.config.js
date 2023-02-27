@@ -11,8 +11,8 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            fontSize: "1.4rem",
-            lineHeight: "1.6rem",
+            fontSize: "1.3rem",
+            lineHeight: "1.5rem",
             a: {
               textDecoration: "none",
               color: "#996070",
@@ -49,18 +49,49 @@ module.exports = {
             blockquote: {
               marginTop: "1.2rem",
               marginBottom: "1.2rem",
-              lineHeight: "1.2rem",
+              lineHeight: "1.3rem",
               paddingLeft: "0.8rem",
+              borderLeft: "0.2rem solid #B99B6B",
             },
+
+            //  change blockquote border left color
+
+            pre: {
+              marginTop: "1rem",
+              marginBottom: "1rem",
+              marginLeft: "auto",
+              marginRight: "auto",
+              borderRadius: "10px",
+              maxWidth: "90%",
+              fontSize: "0.9rem",
+              color: "#E8E8E8",
+              backgroundColor: "#272727",
+            },
+            code: {
+              marginTop: "0.2rem",
+              marginBottom: "0.2rem",
+              marginLeft: "0.2rem",
+              marginRight: "0.2rem",
+              borderRadius: "5px",
+              padding: "0.2rem",
+            },
+
             ol: {
               marginTop: "0.5rem",
               marginBottom: "0.5rem",
               paddingLeft: "1.5rem",
+              "& li::marker": {
+                color: "#B99B6B",
+              },
             },
             ul: {
               marginTop: "0.5rem",
               marginBottom: "0.5rem",
               paddingLeft: "1.5rem",
+
+              "& li::marker": {
+                color: "#B99B6B",
+              },
             },
             li: {
               marginTop: "0.1rem",
