@@ -7,6 +7,7 @@ export type Article = {
 };
 
 export async function getArticleBySlug(slug: string) {
+  console.log("IN SLUG ");
   const res = await fetch(
     "https://articles-back.kunalsin9h.dev/get-articles/",
     { next: { revalidate: 300 } }
@@ -22,6 +23,7 @@ export async function getArticleBySlug(slug: string) {
 }
 
 export async function getAllArticles() {
+  console.log("IN GETARTICLE ");
   const res = await fetch(
     "https://articles-back.kunalsin9h.dev/get-articles/",
     { next: { revalidate: 300 } }

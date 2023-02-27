@@ -1,6 +1,7 @@
-import { getArticleBySlug } from "../../../lib/getArticles";
-import type { Article } from "../../../lib/getArticles";
-import { use } from "react";
+"use client";
+
+import { Article, getArticleBySlug } from "../../../lib/getArticles";
+import { useState, useEffect } from "react";
 
 export default function ArticlePostHead({
   params,
@@ -9,22 +10,48 @@ export default function ArticlePostHead({
     slug: string;
   };
 }) {
-  const art: Article = use(getArticleBySlug(params.slug));
+  const [article, setArticle] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const article: Article = await getArticleBySlug(params.slug);
+      setArticle(article);
+    })();
+  }, [params.slug]);
+
+  if (article == null) {
+    return (
+      <>
+        <title>{"Articles - Kunal Singh"}</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="Kunal Singh Personal Articles Website" />
+        <link rel="icon" href="/images/favicon.ico" />
+        <meta property="og:title" content={"Articles - Kunal Singh"} />
+        <meta
+          property="og:url"
+          content={`https://articles.kunalsin9h.dev/articles/${params.slug}`}
+        />
+        <meta property="og:site_name" content="articles.kunalsin9h.dev" />
+        <meta property="og:type" content="website" />
+      </>
+    );
+  }
+
   return (
     <>
-      <title>{`${art.Title} - Kunal Singh`}</title>
+      <title>{`${article.Title} - Kunal Singh`}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content={art.Description} />
+      <meta name="description" content={article.Description} />
       <meta name="keywords" content="Kunal Singh Personal Articles Website" />
       <link rel="icon" href="/images/favicon.ico" />
-      <meta property="og:title" content={`${art.Title} - Kunal Singh`} />
+      <meta property="og:title" content={`${article.Title} - Kunal Singh`} />
       <meta
         property="og:url"
         content={`https://articles.kunalsin9h.dev/articles/${params.slug}`}
       />
       <meta property="og:site_name" content="articles.kunalsin9h.dev" />
       <meta property="og:type" content="website" />
-      <meta property="og:description" content={art.Description} />
+      <meta property="og:description" content={article.Description} />
     </>
   );
 }

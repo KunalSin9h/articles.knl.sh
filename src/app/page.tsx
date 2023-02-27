@@ -2,9 +2,10 @@ import Image from "next/image";
 
 import { cantoBold } from "../lib/fontsCanto";
 import Socials from "../components/Socials";
-import ArticlePrev from "../components/ArticlesPrev";
+import ArticleShow from "../components/ArticlesShow";
 
-export default function Home(): JSX.Element {
+export default function Home() {
+  console.log("HOME");
   return (
     <>
       <div className="flex flex-col items-center justify-center">
@@ -32,7 +33,7 @@ export default function Home(): JSX.Element {
         </ul>
       </div>
       <section>
-        <ArticlePrev />
+        <ArticleShow isPrev={true} />
       </section>
     </>
   );
