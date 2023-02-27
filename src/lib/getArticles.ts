@@ -7,23 +7,15 @@ export type Article = {
 };
 
 export async function getArticleBySlug(slug: string) {
-  console.log("IN SLUG ");
   const res = await fetch(
-    "https://articles-back.kunalsin9h.dev/get-articles/",
+    `https://articles-back.kunalsin9h.dev/get-article/?slug=${slug}`,
     { next: { revalidate: 300 } }
   );
-  const data: Article[] = await res.json();
-
-  const article: Article = data.find((art: Article) => {
-    if (art.Slug === slug) {
-      return art;
-    }
-  });
-  return article;
+  const data: Article = await res.json();
+  return data;
 }
 
 export async function getAllArticles() {
-  console.log("IN GETARTICLE ");
   const res = await fetch(
     "https://articles-back.kunalsin9h.dev/get-articles/",
     { next: { revalidate: 300 } }

@@ -9,7 +9,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function ArticleShow(params: { isPrev: boolean }) {
-  console.log("IN ArticlesPrev.tsx IN ArticlePrev()");
   const [articles, setArticles]: [Article[], any] = useState(null);
 
   useEffect(() => {
