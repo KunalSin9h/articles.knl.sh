@@ -30,21 +30,33 @@ module.exports = {
               marginTop: "1rem",
               fontWeight: "400",
               marginBottom: "1rem",
+              "& code": {
+                color: "#181815",
+              },
             },
             h2: {
               marginTop: "0.5rem",
               fontWeight: "400",
               marginBottom: "0.5rem",
+              "& code": {
+                color: "#181815",
+              },
             },
             h3: {
               fontWeight: "400",
               marginTop: "0.5rem",
               marginBottom: "0.5rem",
+              "& code": {
+                color: "#181815",
+              },
             },
             h4: {
               fontWeight: "400",
               marginTop: "0.5rem",
               marginBottom: "0.5rem",
+              "& code": {
+                color: "#181815",
+              },
             },
             blockquote: {
               marginTop: "1.2rem",
@@ -71,7 +83,6 @@ module.exports = {
               marginRight: "0.2rem",
               borderRadius: "5px",
               padding: "0.2rem",
-              fontSize: "0.9rem",
               fontWeight: "700",
               backgroundColor: "#D0B8A8",
               color: "#181815",

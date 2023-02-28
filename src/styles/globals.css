@@ -5,14 +5,13 @@
 /* Customizing Scroll Bar */
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
-
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    /*background: #181815;*/
-    border-radius: 5px;
-    border: 0.1px solid #181815;
-    background: #eee;
+  /*background: #181815;*/
+  border-radius: 5px;
+  border: 0.1px solid #181815;
+  background: #eee;
 }

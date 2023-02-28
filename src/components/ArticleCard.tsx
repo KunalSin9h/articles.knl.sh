@@ -12,11 +12,24 @@ export default function ArticleCard({
   slug: string;
   desc?: string;
 }) {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const postDate = new Date(date);
-    const year = postDate.getFullYear();
-    const month = months[postDate.getMonth()];
-    const dat = postDate.getDate();
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const postDate = new Date(date);
+  const year = postDate.getFullYear();
+  const month = months[postDate.getMonth()];
+  const dat = postDate.getDate();
 
   return (
     <div className="mt-10 flex flex-col items-start border-b-2 border-b-blackText  first:mt-0 dark:border-b-whiteText">
