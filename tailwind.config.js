@@ -84,14 +84,15 @@ module.exports = {
               borderRadius: "5px",
               padding: "0.2rem",
               fontWeight: "700",
-              backgroundColor: "#D0B8A8",
-              color: "#181815",
-              "&::before": {
-                display: "none",
-              },
-              "&::after": {
-                display: "none",
-              },
+              fontSize: "0.9rem",
+              // backgroundColor: "#D0B8A8",
+              // color: "#181815",
+              // "&::before": {
+              //   display: "none",
+              // },
+              // "&::after": {
+              //   display: "none",
+              // },
             },
 
             ol: {

@@ -5,7 +5,6 @@ import { cantoSemiBold } from "../lib/fontsCanto";
 import ArticleCart from "./ArticleCard";
 import type { Article } from "../lib/getArticles";
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import Spinner from "./Spinner";
 
