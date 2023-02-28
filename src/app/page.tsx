@@ -5,7 +5,6 @@ import Socials from "../components/Socials";
 import ArticleShow from "../components/ArticlesShow";
 
 export default function Home() {
-  console.log("HOME");
   return (
     <>
       <div className="flex flex-col items-center justify-center">

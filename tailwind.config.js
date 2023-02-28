@@ -53,9 +53,6 @@ module.exports = {
               paddingLeft: "0.8rem",
               borderLeft: "0.2rem solid #B99B6B",
             },
-
-            //  change blockquote border left color
-
             pre: {
               marginTop: "1rem",
               marginBottom: "1rem",
@@ -63,9 +60,9 @@ module.exports = {
               marginRight: "auto",
               borderRadius: "10px",
               maxWidth: "90%",
-              fontSize: "0.9rem",
               color: "#E8E8E8",
               backgroundColor: "#272727",
+              fontSize: "0.9rem",
             },
             code: {
               marginTop: "0.2rem",
@@ -74,6 +71,16 @@ module.exports = {
               marginRight: "0.2rem",
               borderRadius: "5px",
               padding: "0.2rem",
+              fontSize: "0.9rem",
+              fontWeight: "700",
+              backgroundColor: "#D0B8A8",
+              color: "#181815",
+              "&::before": {
+                display: "none",
+              },
+              "&::after": {
+                display: "none",
+              },
             },
 
             ol: {
@@ -127,6 +134,7 @@ module.exports = {
               marginTop: "0.7rem",
               marginBottom: "0.7rem",
               color: "#171717",
+              borderColor: "#B99B6B",
             },
             img: {
               marginTop: "1rem",

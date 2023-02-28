@@ -7,6 +7,7 @@ import type { Article } from "../lib/getArticles";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Spinner from "./Spinner";
 
 export default function ArticleShow(params: { isPrev: boolean }) {
   const [articles, setArticles]: [Article[], any] = useState(null);
@@ -20,9 +21,13 @@ export default function ArticleShow(params: { isPrev: boolean }) {
   }, []);
 
   if (articles == null) {
-    return <h1>Fetching Articles...</h1>;
+    return <Spinner />;
   } else if (articles.length == 0) {
-    return <h1>No Articles</h1>;
+    return (
+      <div className="flex h-96 items-center justify-center">
+        <p>No Articles</p>
+      </div>
+    );
   }
 
   return (

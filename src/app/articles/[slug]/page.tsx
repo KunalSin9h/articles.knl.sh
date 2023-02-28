@@ -1,10 +1,19 @@
 "use client";
 
-import { getArticleBySlug, Article } from "../../../lib/getArticles";
+import Spinner from "../../../components/Spinner";
 import ArticleCard from "../../../components/ArticleCard";
+import { getArticleBySlug, Article } from "../../../lib/getArticles";
+
 import Link from "next/link";
-import { remark } from "remark";
-import html from "remark-html";
+
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import rehypeSlug from "rehype-slug";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
 import { useState, useEffect } from "react";
 
 export default function ArticlePage({ params }) {
@@ -12,18 +21,26 @@ export default function ArticlePage({ params }) {
   const [content, setContent]: [string, any] = useState("");
 
   useEffect(() => {
-    async function fetchAndProcessArticles() {
+    (async function () {
       const art = await getArticleBySlug(params.slug);
       setArticle(art);
-      const cont = await remark().use(html).process(art.Md);
+
+      const cont = await unified()
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypeSanitize)
+        .use(rehypeSlug)
+        .use(rehypeAutolinkHeadings)
+        .use(rehypeStringify)
+        .process(art.Md);
+
       const contString = cont.toString();
       setContent(contString);
-    }
-    fetchAndProcessArticles();
+    })();
   }, [params.slug]);
 
   if (article == null) {
-    return <h1>Fetching Article...</h1>;
+    return <Spinner />;
   }
 
   return (
