@@ -13,3 +13,6 @@ export default function Spinner() {
     </div>
   );
 }
+
+/*
+Spinner can be used in `Loading.js` file but it seems behave weird */

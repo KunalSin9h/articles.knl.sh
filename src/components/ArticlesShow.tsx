@@ -1,30 +1,16 @@
-"use client";
-
-import { getAllArticles } from "../lib/getArticles";
+import { getAllArticlesMeta, ArticleMeta } from "../lib/getArticles";
 import { cantoSemiBold } from "../lib/fontsCanto";
 import ArticleCart from "./ArticleCard";
 import type { Article } from "../lib/getArticles";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import Spinner from "./Spinner";
 
-export default function ArticleShow(params: { isPrev: boolean }) {
-  const [articles, setArticles]: [Article[], any] = useState(null);
+export default async function ArticleShow(params: { isPrev: boolean }) {
+  const articles: ArticleMeta[] = await getAllArticlesMeta();
 
-  useEffect(() => {
-    async function fetchAllArticles() {
-      const allArticles = await getAllArticles();
-      setArticles(allArticles);
-    }
-    fetchAllArticles();
-  }, []);
-
-  if (articles == null) {
-    return <Spinner />;
-  } else if (articles.length == 0) {
+  if (articles.length === 0) {
     return (
-      <div className="flex h-96 items-center justify-center">
-        <p>No Articles</p>
+      <div className="flex h-96 items-center justify-center ">
+        <p className="text-2xl md:text-4xl">No Articles</p>
       </div>
     );
   }

@@ -1,11 +1,6 @@
-"use client";
-
-import Spinner from "../../../components/Spinner";
 import ArticleCard from "../../../components/ArticleCard";
 import { getArticleBySlug, Article } from "../../../lib/getArticles";
-
 import Link from "next/link";
-
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -14,34 +9,19 @@ import rehypeSlug from "rehype-slug";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-import { useState, useEffect } from "react";
+export default async function ArticlePage({ params }) {
+  const article: Article = await getArticleBySlug(params.slug);
 
-export default function ArticlePage({ params }) {
-  const [article, setArticle]: [Article, any] = useState(null);
-  const [content, setContent]: [string, any] = useState("");
+  const cont = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSanitize)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
+    .use(rehypeStringify)
+    .process(article.Md);
 
-  useEffect(() => {
-    (async function () {
-      const art = await getArticleBySlug(params.slug);
-      setArticle(art);
-
-      const cont = await unified()
-        .use(remarkParse)
-        .use(remarkRehype)
-        .use(rehypeSanitize)
-        .use(rehypeSlug)
-        .use(rehypeAutolinkHeadings)
-        .use(rehypeStringify)
-        .process(art.Md);
-
-      const contString = cont.toString();
-      setContent(contString);
-    })();
-  }, [params.slug]);
-
-  if (article == null) {
-    return <Spinner />;
-  }
+  const content = cont.toString();
 
   return (
     <>

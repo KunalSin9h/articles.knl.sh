@@ -1,27 +1,13 @@
-"use client";
+import { ArticleMeta, getArticleMetaBySlug } from "../../../lib/getArticles";
 
-import { Article, getArticleBySlug } from "../../../lib/getArticles";
-import { useState, useEffect } from "react";
-
-export default function ArticlePostHead({
+export default async function ArticlePostHead({
   params,
 }: {
   params: {
     slug: string;
   };
 }) {
-  const [article, setArticle] = useState(null);
-
-  useEffect(() => {
-    (async () => {
-      const article: Article = await getArticleBySlug(params.slug);
-      setArticle(article);
-    })();
-  }, [params.slug]);
-
-  if (article == null) {
-    return null;
-  }
+  const article: ArticleMeta = await getArticleMetaBySlug(params.slug);
 
   return (
     <>
