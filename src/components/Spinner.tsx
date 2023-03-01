@@ -4,7 +4,7 @@ export default function Spinner() {
   return (
     <div className="flex h-96 items-center justify-center">
       <Image
-        src="/images/spinner.gif"
+        src="/images/spinner.svg"
         alt="Loading spinner"
         width={30}
         height={30}
