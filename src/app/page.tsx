@@ -22,13 +22,13 @@ export default function Home() {
           These are my articles.
         </p>
         <ul className="m-2 flex select-none gap-4 ">
+          <Socials name="github" link="https://github.com/kunalsin9h" />
           <Socials name="twitter" link="https://twitter.com/kunalsin9h" />
+          <Socials name="mail" link="mailto:contact@kunalsin9h.dev" />
           <Socials
             name="linkedin"
             link="https://www.linkedin.com/in/kunalsin9h/"
           />
-          <Socials name="mail" link="mailto:contact@kunalsin9h.dev" />
-          <Socials name="resume" link="https://kunalsin9h.dev/resume.pdf" />
         </ul>
       </div>
       <section>
