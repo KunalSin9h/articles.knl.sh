@@ -8,6 +8,7 @@ export default function Spinner() {
         alt="Loading spinner"
         width={30}
         height={30}
+        className="dark:invert"
       />
     </div>
   );
