@@ -17,10 +17,13 @@ export default async function ArticlePostHead({
   }
 
   return (
-    <Meta
-      title={`${article.Title} • Kunal Singh`}
-      description={article.Description}
-      url={`https://articles.kunalsin9h.dev/articles/${params.slug}`}
-    />
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <Meta
+        title={`${article.Title} • Kunal Singh`}
+        description={article.Description}
+        url={`https://articles.kunalsin9h.dev/articles/${params.slug}`}
+      />
+    </>
   );
 }
