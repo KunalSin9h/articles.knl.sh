@@ -8,9 +8,15 @@ import rehypeStringify from "rehype-stringify";
 import rehypeSlug from "rehype-slug";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import Down from "../../../components/Down";
 
 export default async function ArticlePage({ params }) {
-  const article: Article = await getArticleBySlug(params.slug);
+  let article: Article;
+  try {
+    article = await getArticleBySlug(params.slug);
+  } catch (error) {
+    return <Down />;
+  }
 
   const cont = await unified()
     .use(remarkParse)

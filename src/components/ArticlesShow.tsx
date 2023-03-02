@@ -3,9 +3,16 @@ import { cantoSemiBold } from "../lib/fontsCanto";
 import ArticleCart from "./ArticleCard";
 import type { Article } from "../lib/getArticles";
 import Link from "next/link";
+import Down from "./Down";
 
 export default async function ArticleShow(params: { isPrev: boolean }) {
-  const articles: ArticleMeta[] = await getAllArticlesMeta();
+  let articles: ArticleMeta[];
+
+  try {
+    articles = await getAllArticlesMeta();
+  } catch (error) {
+    return <Down />;
+  }
 
   if (articles.length === 0) {
     return (

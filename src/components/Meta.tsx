@@ -11,7 +11,7 @@ export default function Meta(params: {
     <>
       <title>{title}</title>
       <meta charSet="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="Kunal Singh" />
       <meta name="description" content={desc} />

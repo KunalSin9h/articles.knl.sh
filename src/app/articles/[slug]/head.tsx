@@ -8,7 +8,13 @@ export default async function ArticlePostHead({
     slug: string;
   };
 }) {
-  const article: ArticleMeta = await getArticleMetaBySlug(params.slug);
+  let article: ArticleMeta;
+
+  try {
+    article = await getArticleMetaBySlug(params.slug);
+  } catch (error) {
+    return null;
+  }
 
   return (
     <Meta
