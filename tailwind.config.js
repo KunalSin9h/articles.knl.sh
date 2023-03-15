@@ -12,7 +12,6 @@ module.exports = {
         DEFAULT: {
           css: {
             fontSize: "1.3rem",
-            lineHeight: "1.5rem",
             a: {
               textDecoration: "none",
               color: "#996070",
@@ -23,8 +22,9 @@ module.exports = {
               },
             },
             p: {
-              marginTop: "0.2rem",
-              marginBottom: "0.2rem",
+              lineHeight: "1.5rem",
+              marginTop: "0.6rem",
+              marginBottom: "0.6rem",
             },
             h1: {
               marginTop: "1rem",
@@ -35,6 +35,7 @@ module.exports = {
               },
             },
             h2: {
+              lineHeight: "1.6rem",
               marginTop: "0.5rem",
               fontWeight: "400",
               marginBottom: "0.5rem",
@@ -43,6 +44,7 @@ module.exports = {
               },
             },
             h3: {
+              lineHeight: "1.8rem",
               fontWeight: "400",
               marginTop: "0.5rem",
               marginBottom: "0.5rem",
@@ -51,6 +53,8 @@ module.exports = {
               },
             },
             h4: {
+              lineHeight: "1.6rem",
+              fontWeight: "400",
               fontWeight: "400",
               marginTop: "0.5rem",
               marginBottom: "0.5rem",

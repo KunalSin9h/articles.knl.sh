@@ -49,8 +49,6 @@ export async function getAllArticlesMeta() {
     }
   );
 
-  console.log("Hello");
-
   let data: ArticleMeta[] = await res.json();
   return data.sort((a: Article, b: Article) => {
     const dateA: Date = new Date(a.Date);
