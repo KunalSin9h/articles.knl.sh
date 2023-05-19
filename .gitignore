@@ -6,6 +6,8 @@
 # testing
 /coverage
 
+/.vscode/
+
 # DB
 .db
 db

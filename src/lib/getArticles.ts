@@ -3,6 +3,7 @@ export type Article = {
   Slug: string;
   Description?: string;
   Date: string;
+  Views: number;
   Md: string;
 };
 
@@ -11,6 +12,7 @@ export type ArticleMeta = {
   Slug: string;
   Description?: string;
   Date: string;
+  Views: number;
 };
 
 export async function getArticleBySlug(slug: string) {

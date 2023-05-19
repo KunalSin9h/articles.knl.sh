@@ -6,11 +6,13 @@ export default function ArticleCard({
   date,
   slug,
   desc,
+  views,
 }: {
   title: string;
   date: string;
   slug: string;
   desc?: string;
+  views: number;
 }) {
   const months = [
     "January",
@@ -45,6 +47,7 @@ export default function ArticleCard({
       ) : null}
       <div className="flex justify-start gap-2 text-sm">
         <p className="font-bold">{`${month} ${dat}, ${year}`}</p>
+        <p className="font-bold">• {views} views</p>
       </div>
     </div>
   );

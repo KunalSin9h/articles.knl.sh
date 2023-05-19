@@ -37,6 +37,7 @@ export default async function ArticlePage({ params }) {
           desc={article.Description}
           date={article.Date}
           slug={article.Slug}
+          views={article.Views}
         />
         <Link href="/articles">
           <button className="my-2 underline-offset-8 hover:underline">

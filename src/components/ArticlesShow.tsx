@@ -35,6 +35,7 @@ export default async function ArticleShow(params: { isPrev: boolean }) {
               slug={art.Slug}
               date={art.Date}
               desc={art.Description}
+              views={art.Views}
             />
           );
         })}
