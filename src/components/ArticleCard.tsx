@@ -47,7 +47,8 @@ export default function ArticleCard({
       ) : null}
       <div className="flex justify-start gap-2 text-sm">
         <p className="font-bold">{`${month} ${dat}, ${year}`}</p>
-        <p className="font-bold">• {views} views</p>
+        <p>•</p>
+        <p className="font-bold">{views} views</p>
       </div>
     </div>
   );
