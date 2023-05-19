@@ -20,7 +20,7 @@ export async function getArticleBySlug(slug: string) {
     `https://articles-back.kunalsin9h.dev/get-article/?slug=${slug}`,
     {
       next: {
-        revalidate: 300,
+        revalidate: 0,
       },
     }
   );
@@ -33,7 +33,7 @@ export async function getArticleMetaBySlug(slug: string) {
     `https://articles-back.kunalsin9h.dev/get-article-meta/?slug=${slug}`,
     {
       next: {
-        revalidate: 300,
+        revalidate: 0,
       },
     }
   );
@@ -46,7 +46,7 @@ export async function getAllArticlesMeta() {
     "https://articles-back.kunalsin9h.dev/get-articles-meta/",
     {
       next: {
-        revalidate: 300,
+        revalidate: 0,
       },
     }
   );
@@ -66,7 +66,7 @@ export async function getAllArticles() {
     "https://articles-back.kunalsin9h.dev/get-articles/",
     {
       next: {
-        revalidate: 300,
+        revalidate: 0,
       },
     }
   );
