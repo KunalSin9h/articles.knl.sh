@@ -23,7 +23,7 @@ export default function Home() {
         </p>
         <ul className="m-2 flex select-none gap-4 ">
           <Socials name="github" link="https://github.com/kunalsin9h" />
-          <Socials name="twitter" link="https://twitter.com/kunalsin9h" />
+          <Socials name="twitter" link="https://twitter.com/intent/user?screen_name=kunalsin9h" />
           <Socials name="mail" link="mailto:contact@kunalsin9h.dev" />
           <Socials
             name="linkedin"
