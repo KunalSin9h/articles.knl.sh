@@ -1,6 +1,6 @@
 import { getAllArticlesMeta, ArticleMeta } from "../lib/getArticles";
 import { cantoSemiBold } from "../lib/fontsCanto";
-import ArticleCart from "./ArticleCard";
+import ArticleCard from "./ArticleCard";
 import type { Article } from "../lib/getArticles";
 import Link from "next/link";
 import Down from "./Down";
@@ -29,7 +29,7 @@ export default async function ArticleShow(params: { isPrev: boolean }) {
         {articles.map((art: Article, i: number) => {
           if (i >= 5 && params.isPrev) return null;
           return (
-            <ArticleCart
+            <ArticleCard
               key={i}
               title={art.Title}
               slug={art.Slug}
