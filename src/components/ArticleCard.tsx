@@ -1,5 +1,6 @@
 import { cantoBold, cantoLight } from "../lib/fontsCanto";
 import Link from "next/link";
+import millify from "millify";
 
 export default function ArticleCard({
   title,
@@ -48,7 +49,7 @@ export default function ArticleCard({
       <div className="flex justify-start gap-2 text-sm">
         <p className="font-bold">{`${month} ${dat}, ${year}`}</p>
         <p>•</p>
-        <p className="font-bold">{views} views</p>
+        <p className="font-bold">{millify(views)} views</p>
       </div>
     </div>
   );
