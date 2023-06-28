@@ -10,6 +10,15 @@ import rehypeSanitize from "rehype-sanitize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Down from "../../../components/Down";
 
+import { Metadata } from "next";
+import Meta from "../../../components/Meta";
+
+export const metadata: Metadata = Meta({
+  title: `${"Article"} • Kunal Singh`,
+  description: "",
+  url: `https://articles.kunalsin9h.dev/articles/`,
+});
+
 export default async function ArticlePage({ params }) {
   let article: Article;
   try {

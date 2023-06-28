@@ -1,6 +1,15 @@
 import ArticleShow from "../../components/ArticlesShow";
 import Link from "next/link";
 
+import { Metadata } from "next";
+import Meta from "../../components/Meta";
+
+export const metadata: Metadata = Meta({
+  title: "All Articles • Kunal Singh",
+  description: "All Articles by Kunal Singh",
+  url: "https://articles.kunalsin9h.dev/articlek",
+});
+
 export default function ArticlePage() {
   return (
     <div className="mt-4">

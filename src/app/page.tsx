@@ -4,6 +4,11 @@ import { cantoBold } from "../lib/fontsCanto";
 import Socials from "../components/Socials";
 import ArticleShow from "../components/ArticlesShow";
 
+import { Metadata } from "next";
+import Meta from "../components/Meta";
+
+export const metadata: Metadata = Meta({});
+
 export default function Home() {
   return (
     <>
@@ -13,7 +18,7 @@ export default function Home() {
           alt="Picture of the Kunal(Kunal Singh)"
           width={200}
           height={200}
-          className="mt-8 mb-4 h-36 w-36 select-none md:h-48 md:w-48 "
+          className="mb-4 mt-8 h-36 w-36 select-none md:h-48 md:w-48 "
         />
         <p className={`${cantoBold.className} text-5xl md:text-6xl`}>
           Kunal Singh
@@ -23,7 +28,10 @@ export default function Home() {
         </p>
         <ul className="m-2 flex select-none gap-4 ">
           <Socials name="github" link="https://github.com/kunalsin9h" />
-          <Socials name="twitter" link="https://twitter.com/intent/user?screen_name=kunalsin9h" />
+          <Socials
+            name="twitter"
+            link="https://twitter.com/intent/user?screen_name=kunalsin9h"
+          />
           <Socials name="mail" link="mailto:contact@kunalsin9h.dev" />
           <Socials
             name="linkedin"
