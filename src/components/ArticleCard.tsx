@@ -36,7 +36,7 @@ export default function ArticleCard({
 
   return (
     <div className="mt-10 flex flex-col items-start border-b-2 border-b-blackText  first:mt-0 dark:border-b-whiteText">
-      <Link href={`/articles/${slug}`}>
+      <Link prefetch={false} href={`/articles/${slug}`}>
         <p className={`${cantoBold.className} text-2xl md:text-3xl `}>
           {title}
         </p>
