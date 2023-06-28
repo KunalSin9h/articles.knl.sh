@@ -9,6 +9,7 @@ export default function Meta(params: {
   const url = params.url || "https://articles.kunalsin9h.dev";
 
   return {
+    metadataBase: new URL("https://kunalsin9h.dev"),
     title,
     description,
     keywords: [

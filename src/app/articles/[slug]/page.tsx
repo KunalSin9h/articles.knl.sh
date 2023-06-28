@@ -1,5 +1,9 @@
 import ArticleCard from "../../../components/ArticleCard";
-import { getArticleBySlug, Article } from "../../../lib/getArticles";
+import {
+  getArticleBySlug,
+  Article,
+  getArticleMetaBySlug,
+} from "../../../lib/getArticles";
 import Link from "next/link";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -13,11 +17,20 @@ import Down from "../../../components/Down";
 import { Metadata } from "next";
 import Meta from "../../../components/Meta";
 
-export const metadata: Metadata = Meta({
-  title: `${"Article"} • Kunal Singh`,
-  description: "",
-  url: `https://articles.kunalsin9h.dev/articles/`,
-});
+export async function generateMetadata({ params }): Promise<Metadata> {
+  try {
+    let articleMeta = await getArticleMetaBySlug(params.slug);
+    return Meta({
+      title: `${articleMeta.Title} • Kunal Singh`,
+      description: articleMeta.Description,
+      url: `https://articles.kunalsin9h.dev/articles/${articleMeta.Slug}`,
+    });
+  } catch (error) {
+    return {
+      title: "Error",
+    };
+  }
+}
 
 export default async function ArticlePage({ params }) {
   let article: Article;

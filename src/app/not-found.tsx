@@ -13,9 +13,16 @@ export default function NotFound() {
       />
       <div className="text-center">
         <h1 className="font-bold">Page not found</h1>
-        <p className="text-sm">What you are looking for may be moved to a <strong>different location</strong> <br/> or just does <strong>not exist</strong>.</p>
-        <p className="my-2 text-md">
-          Go to <Link href="/" className="underline">Home page</Link>
+        <p className="text-sm">
+          What you are looking for may be moved to a{" "}
+          <strong>different location</strong> <br /> or just does{" "}
+          <strong>not exist</strong>.
+        </p>
+        <p className="text-md my-2">
+          Go to{" "}
+          <Link href="/" className="underline">
+            Home page
+          </Link>
         </p>
       </div>
     </div>
