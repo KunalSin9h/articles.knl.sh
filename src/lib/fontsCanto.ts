@@ -1,4 +1,4 @@
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 const cantoBold = localFont({
   src: "../../fonts/canto/Canto-Bold.woff2",

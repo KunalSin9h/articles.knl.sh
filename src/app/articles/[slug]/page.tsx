@@ -31,7 +31,7 @@ export default async function ArticlePage({ params }) {
 
   return (
     <>
-      <div className=" my-4 p-4 md:my-8 md:py-2 ">
+      <div className="my-4 p-4 md:my-8 md:py-2">
         <ArticleCard
           title={article.Title}
           desc={article.Description}

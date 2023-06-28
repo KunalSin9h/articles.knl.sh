@@ -8,7 +8,7 @@ export default function ArticleLayout({
 }): JSX.Element {
   return (
     <div className="flex h-screen flex-col justify-between">
-      {children}
+      <div className="items-start">{children}</div>
       <div
         className={`${cantoLight.className}  mt-16 border-t-2 border-t-blackText border-opacity-50 p-2 text-center  text-sm  dark:border-t-whiteText`}
       >
