@@ -9,7 +9,7 @@ export default function NotFound() {
         alt="404 Banner Image"
         width={500}
         height={500}
-        className="mx-auto my-12"
+        className="mx-auto my-12 p-4"
       />
       <div className="text-center">
         <h1 className="font-bold">Page not found</h1>
