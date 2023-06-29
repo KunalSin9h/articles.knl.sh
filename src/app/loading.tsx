@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { useState, useEffect } from "react";
+import { cantoItalic, cantoSemiBold } from "../lib/fontsCanto";
 
 export default function Page() {
   let [quote, setQuote] = useState("");
@@ -25,7 +26,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-8 px-8">
+    <div className="flex h-screen flex-col items-center justify-center gap-8 px-8 transition-all delay-150">
       <div className="flex items-center gap-2">
         <Image
           src="/images/spinner.svg"
@@ -37,10 +38,13 @@ export default function Page() {
         <p className="text-2xl font-bold">Loading</p>
       </div>
       <div className={`${quote === "" ? "hidden" : ""}`}>
-        <div className="italic">
+        <div className={`${cantoItalic.className}`}>
           <Balancer>{quote}</Balancer>
         </div>
-        <div className="text-center"> - {author}</div>
+        <div className={`text-center ${cantoSemiBold.className}`}>
+          {" "}
+          - {author}
+        </div>
       </div>
     </div>
   );
