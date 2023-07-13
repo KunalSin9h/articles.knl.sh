@@ -17,7 +17,7 @@ export type ArticleMeta = {
 
 export async function getArticleBySlug(slug: string) {
   const res = await fetchWithTimeout(
-    `https://articles-back.kunalsin9h.dev/get-article/?slug=${slug}`,
+    `https://articles-back.kunalsin9h.com/get-article/?slug=${slug}`,
     {
       next: {
         revalidate: 0,
@@ -30,7 +30,7 @@ export async function getArticleBySlug(slug: string) {
 
 export async function getArticleMetaBySlug(slug: string) {
   const res = await fetchWithTimeout(
-    `https://articles-back.kunalsin9h.dev/get-article-meta/?slug=${slug}`,
+    `https://articles-back.kunalsin9h.com/get-article-meta/?slug=${slug}`,
     {
       next: {
         revalidate: 0,
@@ -43,7 +43,7 @@ export async function getArticleMetaBySlug(slug: string) {
 
 export async function getAllArticlesMeta() {
   const res = await fetchWithTimeout(
-    "https://articles-back.kunalsin9h.dev/get-articles-meta/",
+    "https://articles-back.kunalsin9h.com/get-articles-meta/",
     {
       next: {
         revalidate: 0,
@@ -63,7 +63,7 @@ export async function getAllArticlesMeta() {
 
 export async function getAllArticles() {
   const res = await fetchWithTimeout(
-    "https://articles-back.kunalsin9h.dev/get-articles/",
+    "https://articles-back.kunalsin9h.com/get-articles/",
     {
       next: {
         revalidate: 0,

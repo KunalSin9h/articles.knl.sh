@@ -32,7 +32,7 @@ export default function Home() {
             name="twitter"
             link="https://twitter.com/intent/user?screen_name=kunalsin9h"
           />
-          <Socials name="mail" link="mailto:contact@kunalsin9h.dev" />
+          <Socials name="mail" link="mailto:contact@kunalsin9h.com" />
           <Socials
             name="linkedin"
             link="https://www.linkedin.com/in/kunalsin9h/"

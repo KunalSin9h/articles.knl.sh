@@ -6,10 +6,10 @@ export default function Meta(params: {
   const title = params.title || "Articles • Kunal Singh";
   const description =
     params.description || "Kunal Singh's Personal Article Website";
-  const url = params.url || "https://articles.kunalsin9h.dev";
+  const url = params.url || "https://articles.kunalsin9h.com";
 
   return {
-    metadataBase: new URL("https://kunalsin9h.dev"),
+    metadataBase: new URL("https://kunalsin9h.com"),
     title,
     description,
     keywords: [
@@ -22,12 +22,12 @@ export default function Meta(params: {
       "Articles",
       "Blogs",
     ],
-    authors: [{ name: "Kunal Singh", url: "https://kunalsin9h.dev" }],
+    authors: [{ name: "Kunal Singh", url: "https://kunalsin9h.com" }],
     openGraph: {
       title,
       description,
       url,
-      siteName: "articles.kunalsin9h.dev",
+      siteName: "articles.kunalsin9h.com",
       locale: "en_US",
       type: "website",
     },
@@ -40,7 +40,7 @@ export default function Meta(params: {
       card: "summary",
       title,
       description,
-      site: "articles.kunalsin9h.dev",
+      site: "articles.kunalsin9h.com",
       creator: "@KunalSin9h",
     },
     viewport: {

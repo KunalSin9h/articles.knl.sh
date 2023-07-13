@@ -23,7 +23,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     return Meta({
       title: `${articleMeta.Title} • Kunal Singh`,
       description: articleMeta.Description,
-      url: `https://articles.kunalsin9h.dev/articles/${articleMeta.Slug}`,
+      url: `https://articles.kunalsin9h.com/articles/${articleMeta.Slug}`,
     });
   } catch (error) {
     return {
