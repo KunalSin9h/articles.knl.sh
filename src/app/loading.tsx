@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { useState, useEffect } from "react";
-import { cantoItalic, cantoSemiBold } from "../lib/fontsCanto";
+import { cantoSemiBold } from "../lib/fontsCanto";
 
 export default function Page() {
   let [quote, setQuote] = useState("");
@@ -38,7 +38,7 @@ export default function Page() {
         <p className="text-2xl font-bold">Loading</p>
       </div>
       <div className={`${quote === "" ? "hidden" : ""}`}>
-        <div className={`${cantoItalic.className}`}>
+        <div className={"italic"}>
           <Balancer>{quote}</Balancer>
         </div>
         <div className={`text-center ${cantoSemiBold.className}`}>
